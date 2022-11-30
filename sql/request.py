@@ -69,8 +69,18 @@ if __name__ == "__main__":
                         WHERE date BETWEEN '01-01-2020' AND '12-31-2020' 
                         GROUP BY date
                         ORDER BY date; """)
+
+    print("""
+    =================================================
+    Le chiffre d’affaires (le montant total des ventes),
+    jour par jour, du 1er janvier 2020 au 31 décembre 2020 :
+    =================================================
+    """)
+
     for row in cursor:
         print("date: ", row[0], ' ventes: ', row[1])
+
+    print('')
 
     cursor = con.execute("""
                             SELECT 
@@ -91,8 +101,16 @@ if __name__ == "__main__":
                             WHERE date BETWEEN '01-01-2020' AND '12-31-2020'   
                             GROUP BY t.client_id;
                             """)
+
+    print("""
+    =================================================
+    Les ventes meuble et déco par clients,
+    du 1er janvier 2020 au 31 décembre 2020 :
+    =================================================
+    """)
     for row in cursor:
         print("client_id: ", row[0], ' ventes_meuble: ',
               row[1], ' ventes_deco: ', row[2])
+    print('')
 
     con.close()
