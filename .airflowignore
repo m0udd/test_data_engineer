@@ -1,0 +1,2 @@
+test_data_engineer/plugins/.*
+test_data_engineer/dags/de_airflow_dag.py
