@@ -71,5 +71,4 @@ airflow-webserver.pid
 standalone_admin_password.txt
 
 # Project
-plugins/*
-logs/*
+logs/
